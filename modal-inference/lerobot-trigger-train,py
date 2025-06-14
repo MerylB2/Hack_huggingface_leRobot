@@ -1,13 +1,14 @@
 import modal
 
+# app = modal.App("lerobot-smolvla-training-app", image=image)
 # Look up your deployed function
-train_fn = modal.Function.from_name("lerobot-training", "train_policy")
+train_fn = modal.Function.from_name("lerobot-smolvla-training-app", "train_policy")
 
 # Start training asynchronously
 function_call = train_fn.spawn(
-    dataset_repo_id="lerobot/pusht",
-    policy_type="diffusion",
-        env_type="pusht"
+    dataset_repo_id="lerobot/svla_so101_pickplace",
+    policy_path="lerobot/smolvla_base",
+    output_dir = "/outputs/train_smolvla"
 )
 
 print(f"Training started! Job ID: {function_call.object_id}")
