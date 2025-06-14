@@ -1,0 +1,14 @@
+import modal
+
+# Look up your deployed function
+train_fn = modal.Function.from_name("lerobot-training", "train_policy")
+
+# Start training asynchronously
+function_call = train_fn.spawn(
+    dataset_repo_id="lerobot/pusht",
+    policy_type="diffusion",
+        env_type="pusht"
+)
+
+print(f"Training started! Job ID: {function_call.object_id}")
+print("You can now safely turn off your PC.")

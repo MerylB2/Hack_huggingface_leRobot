@@ -1,8 +1,8 @@
 import modal
 import subprocess
+import os
 
 # Define the image with all necessary dependencies
-import modal
 
 # Complete LeRobot image with all dependencies
 image = (
@@ -53,7 +53,8 @@ volume = modal.Volume.from_name("lerobot-outputs", create_if_missing=True)
     gpu="A100",
     timeout=7200,  # 2 hours
     volumes={"/outputs": volume},
-    secrets=[modal.Secret.from_name("wandb-secret")]  # Optional: for W&B logging
+    secrets=[modal.Secret.from_name("wandb-secret")],  # Optional: for W&B logging
+    container_idle_timeout=600
 )
 def train_policy(
     dataset_repo_id: str = "lerobot/pusht",
