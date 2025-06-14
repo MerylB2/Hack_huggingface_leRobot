@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Poetry virtual environments
+.venv/
+poetry.lock
+
+# Modal cache and logs
+.modal_cache/
+modal.log
+
+# Environment variables
+.env
+*.env
+
+# Output directories
+/outputs/
+/lerobot-outputs/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# System files
+.DS_Store
+Thumbs.db
