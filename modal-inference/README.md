@@ -13,11 +13,6 @@ This project demonstrates how to run training for LeRobot on a cloud GPU using M
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/huggingface/lerobot.git
-   cd lerobot
-   ```
 
 2. Install dependencies using Poetry:
    ```bash
